@@ -11,7 +11,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     observer.cpp \
-    displayelement.cpp
+    displayelement.cpp \
+    subject.cpp \
+    currentconditionsdisplay.cpp \
+    weatherdata.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -26,4 +29,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 HEADERS += \
     observer.h \
-    displayelement.h
+    displayelement.h \
+    subject.h \
+    currentconditionsdisplay.h \
+    weatherdata.h
