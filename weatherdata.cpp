@@ -19,7 +19,7 @@ void WeatherData::removeObserver(Observer*o){
 }
 
 void WeatherData::notifyObservers(){
-    for (int i = 0; i > observers->size(); i++){
+    for (int i = 0; i < observers->size(); i++){
         Observer *observer = observers->at(i);
         observer->update(temperature,humidity,pressure);
     }

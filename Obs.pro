@@ -1,5 +1,5 @@
 QT += core
-QT -= gui
+QT += gui widgets
 
 CONFIG += c++11
 
