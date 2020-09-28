@@ -6,12 +6,12 @@ ForecastDisplay::ForecastDisplay(Subject *weatherData) {
     this->weatherData = weatherData;
     weatherData->registerObserver(this);
 
-    this->setGeometry(100, 100, 200, 200);
+    this->setGeometry(100, 400, 250, 200);
     this->setWindowTitle("Текущие значения");
 
     curPressure = new QLabel(this);
     curPressure->setText("Текущее давление:");
-    curPressure->setGeometry(10,10, 90, 30);
+    curPressure->setGeometry(10,10, 150, 30);
     curPressure->setParent(this);
 
     currentPressureLCD = new QLCDNumber(this);
@@ -21,8 +21,8 @@ ForecastDisplay::ForecastDisplay(Subject *weatherData) {
 
 
     lPressure = new QLabel(this);
-    lPressure->setText("Предыдущее давление:");
-    lPressure->setGeometry(10,10, 90, 30);
+    lPressure->setText("Предшествующее давление:");
+    lPressure->setGeometry(10,40, 150, 30);
     lPressure->setParent(this);
 
     lastPressureLCD = new QLCDNumber(this);
@@ -30,7 +30,12 @@ ForecastDisplay::ForecastDisplay(Subject *weatherData) {
     lastPressureLCD->setPalette(Qt::green);
     lastPressureLCD->setParent(this);
 
+    text = new QLabel(this);
+    text->setText("Прогноз: ");
+    text->setGeometry(10,70, 400, 30);
+    text->setParent(this);
 
+this->show();
 }
 
 void ForecastDisplay::update(float t, float h, float p) {
@@ -41,16 +46,22 @@ void ForecastDisplay::update(float t, float h, float p) {
 
 void ForecastDisplay::display() {
 
-   currentPressureLCD->display(QString::number(currentPressure));
-   lastPressureLCD->display(QString::number( lastPressure));
-    /*cout << "Forecast: ";
+    currentPressureLCD->display(QString::number(currentPressure));
+    lastPressureLCD->display(QString::number(lastPressure));
+
+    /*cout << "Forecast: ";*/
     if (currentPressure > lastPressure) {
-        cout << "Improving weather on the way!" << endl;
+        text->setText("Improving weather on the way!");
+        /*cout << "Improving weather on the way!" << endl;*/
+
     }
     else if (currentPressure == lastPressure) {
-        cout << "More of the same" << endl;
+        text->setText("More of the same");
+       /* cout <<"More of the same" << endl;*/
+
     }
     else if (currentPressure < lastPressure) {
-        cout << "Watch out for cooler, rainy weather" << endl;
-    }*/
+        text->setText("Watch out for cooler, rainy weather");
+        /*cout << "Watch out for cooler, rainy weather" << endl;*/
+    }
 }

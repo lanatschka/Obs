@@ -4,7 +4,7 @@ CurrentConditionsDisplay::CurrentConditionsDisplay(Subject *weatherData) {
     this->weatherData = weatherData;
     weatherData->registerObserver(this);
 
-    this->setGeometry(100, 100, 200, 200);
+    this->setGeometry(100, 100, 250, 200);
     this->setWindowTitle("Текущие значения");
 
     temp = new QLabel(this);

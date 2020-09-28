@@ -12,6 +12,13 @@ private:
     float tempSum;
     int numReadings;
     Subject *weatherData;
+    QLabel *maxtem;
+    QLabel *mintem;
+    QLabel *temps;
+    QLCDNumber *maxtemLCD;
+    QLCDNumber *mintemLCD;
+    QLCDNumber *tempsLCD;
+
 public:
     StatisticsDisplay(Subject *weatherData);
     virtual void update(float t, float h, float p);

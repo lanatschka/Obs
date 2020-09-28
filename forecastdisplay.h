@@ -13,6 +13,7 @@ private:
 
     QLabel *curPressure;
     QLabel *lPressure;
+    QLabel *text;
     QLCDNumber *currentPressureLCD;
     QLCDNumber *lastPressureLCD;
 

@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 
     CurrentConditionsDisplay *current = new CurrentConditionsDisplay(weatherData);
     StatisticsDisplay *stat = new StatisticsDisplay(weatherData);
+
     ForecastDisplay *forecast = new ForecastDisplay(weatherData);
 
     return a.exec();
