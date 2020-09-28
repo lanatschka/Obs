@@ -1,13 +1,12 @@
 #ifndef CURRENTCONDITIONSDISPLAY_H
 #define CURRENTCONDITIONSDISPLAY_H
 
-
 #include "observer.h"
 #include "displayelement.h"
 #include "subject.h"
 
-class CurrentConditionsDisplay : public Observer, public DisplayElement, public QWidget
-{
+
+class CurrentConditionsDisplay : public Observer, public DisplayElement, public QWidget {
 private:
     float temperature;
     float humidity;
@@ -16,11 +15,13 @@ private:
     QLabel *temp;
     QLabel *hum;
     QLabel *press;
+    QLCDNumber *tempLCD;
+    QLCDNumber *humLCD;
+    QLCDNumber *pressLCD;
 public:
     CurrentConditionsDisplay(Subject *weatherData);
     virtual void update(float t, float h, float p);
     virtual void display();
-
 };
 
 #endif // CURRENTCONDITIONSDISPLAY_H

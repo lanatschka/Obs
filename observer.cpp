@@ -4,3 +4,7 @@ Observer::Observer()
 {
 
 }
+
+void Observer::upd() {
+    cout << "upd" << endl;
+}

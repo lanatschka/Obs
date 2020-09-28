@@ -4,3 +4,8 @@ Subject::Subject()
 {
 
 }
+
+Subject::~Subject()
+{
+
+}
